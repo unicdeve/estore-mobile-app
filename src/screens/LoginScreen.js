@@ -3,7 +3,11 @@ import { Alert, Animated } from 'react-native';
 import { Box } from 'react-native-design-utility';
 import OnBoardLogo from '../commons/OnBoardLogo';
 import LoginButton from '../commons/LoginButtons';
+import {FacebookApi} from "../api/Facebook";
+import {GoogleApi} from "../api/Google";
 
+
+const BoxAnimated = Animated.createAnimatedComponent(Box);
 
 class LoginScreen extends Component {
     state = {
@@ -27,12 +31,24 @@ class LoginScreen extends Component {
         }).start()
     }
 
-    onGooglePress = () => {
-        Alert.alert('Google Pressed')
+    onGooglePress = async () => {
+        try {
+            const token = await GoogleApi.loginAsync()
+
+            console.log('token', token)
+        } catch (e) {
+            console.log('error', e);
+        }
     }
 
-    onFacebookPress = () => {
-        Alert.alert('Facebook Pressed')
+    onFacebookPress = async () => {
+        try {
+            const token = await FacebookApi.loginAsync();
+
+            console.log('token', token)
+        } catch (e) {
+            console.log('error', e);
+        }
     }
 
     componentDidMount() {
@@ -51,22 +67,22 @@ class LoginScreen extends Component {
 
         return (
             <Box f={1} center bg='white'>
-                <Animated.View 
-                style={{ 
-                    flex: 1, 
-                    transform: [
-                        {
-                            translateY: logoTranslate,
-                        },
-                    ],
-                }}
+                <BoxAnimated 
+                    f={1}
+                    style={{ 
+                        transform: [
+                            {
+                                translateY: logoTranslate,
+                            },
+                        ],
+                    }}
                 >
                     <Box f={1} center>
                         <OnBoardLogo />
                     </Box>
-                </Animated.View>
+                </BoxAnimated>
                 
-                <Animated.View style={{flex: 0.9, width: "100%", opacity}}>
+                <BoxAnimated f={0.9} w="100%" style={{opacity}}>
                     <LoginButton onPress={this.onGooglePress} type="google">
                         Continue with Google
                     </LoginButton>
@@ -74,7 +90,7 @@ class LoginScreen extends Component {
                     <LoginButton onPress={this.onFacebookPress} type="facebook">
                         Continue with Facebook
                     </LoginButton>
-                </Animated.View>
+                </BoxAnimated>
             </Box>
         )
     }
