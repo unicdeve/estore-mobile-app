@@ -1,6 +1,7 @@
 import React from 'react';
 import { ActivityIndicator } from 'react-native';
-import { UtilityThemeProvider, Box, Text } from 'react-native-design-utility';
+import { UtilityThemeProvider, Box } from 'react-native-design-utility';
+import { theme } from './src/constants/theme';
 
 import Navigation from './src/screens';
 import { images } from './src/constants/images';
@@ -33,7 +34,7 @@ export default class App extends React.Component {
       )
     }
     return (
-      <UtilityThemeProvider>
+      <UtilityThemeProvider theme={theme}>
         <Navigation />
       </UtilityThemeProvider>
     );

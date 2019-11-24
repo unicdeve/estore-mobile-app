@@ -42,6 +42,9 @@ const color = {
   greenLight: '#66bb6a',
   greenLighter: '#81c784',
   greenLightest: '#a5d6a7',
+
+  googleBlue: '#197602',
+  facebookBlue: '#406fa9',
 };
 
 const theme = {
@@ -51,7 +54,8 @@ const theme = {
       base: 16,
       md: 18,
       lg: 20,
-      xl: 32,
+      xl: 24,
+      '2xl': 32
     },
     weight: {
       light: '200',
@@ -75,6 +79,7 @@ const theme = {
   },
   color,
   space: {
+    "2xs": 6,
     xs: 8,
     sm: 16,
     md: 24,
@@ -82,6 +87,7 @@ const theme = {
     xl: 40,
   },
   radius: {
+    '2xl': 3,
     xs: 6,
     sm: 10,
     base: 14,
