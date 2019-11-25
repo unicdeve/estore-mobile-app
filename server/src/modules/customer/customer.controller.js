@@ -3,6 +3,7 @@ import * as Yup from 'yup';
 import { PROVIDER_ENUM } from './customer.model';
 import { AuthProvider } from '../../services/authProvider';
 import { getOrCreateCustomer } from './customer';
+import { AuthServices } from '../../services/Auth';
 
 
 export const create = async (req, res) => {
@@ -31,9 +32,11 @@ export const create = async (req, res) => {
 
         console.log(provider)
 
-        const customer = await getOrCreateCustomer(data, provider)
+        const customer = await getOrCreateCustomer(data, provider);
 
-        res.status(201).json(customer);
+        const jwtToken = AuthServices.createToken(customer);
+
+        res.status(201).json({token: jwtToken});
 
     } catch(err) {
         res.status(400).json({ message: err.message });
