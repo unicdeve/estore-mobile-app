@@ -17,6 +17,10 @@ const CustomerSchema = new Schema({
             type: { required: true, type: String, enum: PROVIDER_ENUM }
         }
     ]
-}, { timestamps: true });
+    }, 
+    { timestamps: true },
+);
+
+CustomerSchema.index({ email: 1 });
 
 export default mongoose.model('Cutomer', CustomerSchema);
