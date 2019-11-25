@@ -28,10 +28,6 @@ export const create = async (req, res) => {
             res.sendStatus(400)
         }
 
-        console.log(data)
-
-        console.log(provider)
-
         const customer = await getOrCreateCustomer(data, provider);
 
         const jwtToken = AuthServices.createToken(customer);
