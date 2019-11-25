@@ -2,7 +2,7 @@ import * as Yup from 'yup';
 
 import { PROVIDER_ENUM } from './customer.model';
 import { AuthProvider } from '../../services/authProvider';
-import { getOrCreateCustomer } from './customer';
+import { getOrCreateCustomer, me } from './customer';
 import { AuthServices } from '../../services/Auth';
 
 
@@ -36,5 +36,19 @@ export const create = async (req, res) => {
 
     } catch(err) {
         res.status(400).json({ message: err.message });
+    }
+}
+
+export const getUserInfo = async (req, res) => {
+    try {
+        if(req.user) {
+            const userInfo = await me(req.user._id);
+
+            res.json(userInfo);
+        } else {
+            res.status(400).json({ message: "User not found"});
+        }
+    } catch (e) {
+        res.status(400).json({ message: e.message});
     }
 }

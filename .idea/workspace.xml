@@ -1,17 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e5a6ca15-9987-48ff-90d6-78495d0f6739" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/api/Api.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/api/NavigationServices.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/server/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/modules/customer/customer.controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/modules/customer/customer.controller.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/server/yarn.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/screens/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/screens/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
-    </list>
+    <list default="true" id="e5a6ca15-9987-48ff-90d6-78495d0f6739" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,7 +48,7 @@
       <updated>1574627766903</updated>
       <workItem from="1574627798993" duration="8843000" />
       <workItem from="1574673381569" duration="604000" />
-      <workItem from="1574688013981" duration="4851000" />
+      <workItem from="1574688013981" duration="5353000" />
     </task>
     <servers />
   </component>
