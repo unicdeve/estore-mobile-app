@@ -5,7 +5,7 @@ import { Provider } from 'mobx-react/native';
 import { theme } from './src/constants/theme';
 
 import Navigation from './src/screens';
-import { images } from './src/constants/images';
+import { images, tabBarIcons } from './src/constants/images';
 import { cacheImages } from './src/utils/cacheImages';
 import { store } from './src/models'
 
@@ -20,7 +20,11 @@ export default class App extends React.Component {
   }
 
   cacheAssets = async () => {
-    const imagesAssets = cacheImages(Object.values(images))
+    const imagesAssets = cacheImages([
+       ...Object.values(images), 
+       ...Object.values(tabBarIcons.active),
+       ...Object.values(tabBarIcons.Inactive),
+    ])
 
     await Promise.all([ ...imagesAssets ]);
 

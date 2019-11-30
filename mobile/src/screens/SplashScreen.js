@@ -16,7 +16,7 @@ class SplashScreen extends Component {
     checkAuth = () => {
         setTimeout(async () => {
             await this.props.currentUser.setupAuth();
-        }, 2000);
+        }, 1000);
     }
 
     render() {
