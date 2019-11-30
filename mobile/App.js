@@ -1,11 +1,13 @@
 import React from 'react';
 import { ActivityIndicator } from 'react-native';
 import { UtilityThemeProvider, Box } from 'react-native-design-utility';
+import { Provider } from 'mobx-react/native';
 import { theme } from './src/constants/theme';
 
 import Navigation from './src/screens';
 import { images } from './src/constants/images';
 import { cacheImages } from './src/utils/cacheImages';
+import { store } from './src/models'
 
 
 export default class App extends React.Component {
@@ -34,9 +36,11 @@ export default class App extends React.Component {
       )
     }
     return (
-      <UtilityThemeProvider theme={theme}>
+      <Provider { ...store }>
+        <UtilityThemeProvider theme={theme}>
         <Navigation />
-      </UtilityThemeProvider>
+        </UtilityThemeProvider>
+      </Provider>
     );
   }
 }

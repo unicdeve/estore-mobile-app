@@ -2,7 +2,10 @@ import React, { Component } from 'react';
 import { Box } from 'react-native-design-utility'
 import OnBoardLogo from '../commons/OnBoardLogo';
 
+import { inject } from 'mobx-react/native';
 
+
+@inject('currentUser')
 class SplashScreen extends Component {
     state = {};
 
@@ -11,9 +14,9 @@ class SplashScreen extends Component {
     }
 
     checkAuth = () => {
-        setTimeout(() => {
-            this.props.navigation.navigate("Auth")
-        }, 1000)
+        setTimeout(async () => {
+            await this.props.currentUser.setupAuth();
+        }, 2000);
     }
 
     render() {
