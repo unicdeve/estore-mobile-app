@@ -18,3 +18,8 @@ export const tabBarIcons = {
         Stores: require('../../assets/img/tabIcon/StoresIconInactive.png'),
     }
 }
+
+
+export const productImgs = {
+    apple: require('../../assets/img/products/apple.png')
+}
